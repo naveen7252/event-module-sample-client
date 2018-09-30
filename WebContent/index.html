@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<title>Nuls Blockchain Events</title>
+<style>
+  * {
+    box-sizing: border-box; 
+  }
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    margin: 1;
+  }
+  .col-1 {
+   // background: #D7E8D4;
+    flex: 1;
+  }
+  .col-2 {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+  }
+  .content {
+    padding:25px;
+  }
+  
+  header, footer {
+    background: #dcdfe5;
+    height: 20vh;
+  }
+  h2{
+    padding: 1em;
+  }
+</style>
+</head>
+<body>
+  
+  <div class="col-2">
+  	<h2>Nuls Blockchain Events DashBoard</h2>
+    <div class="content">
+	<div>
+		<br><br><button id="latestBlock" onclick="connect('block/latest')">Subscribe To Latest Block</button>
+		<button id="disconnect" onclick="disconnect()" disabled="disabled">Disconnect</button><br><br>
+	</div>
+    <div>Latest Block Info:</div> <br><br>
+		<div>
+		  <span>Block Height: </span><span id="height"></span><br><br>
+		  <span>Block Hash: </span><span id="hash"></span><br><br>
+		  <span>Time: </span><span id="time"></span>
+		</div>
+    </div>
+  	
+  </div>
+  <script src="/NulsClientApp/js/sockjs.min.js"></script>
+    <script src="/NulsClientApp/js/stomp.min.js"></script>
+    <script src="/NulsClientApp/js/jquery-3.3.1.min.js"></script>
+    <script src="/NulsClientApp/js/main.js"></script>
+</body>
+
+</html>
